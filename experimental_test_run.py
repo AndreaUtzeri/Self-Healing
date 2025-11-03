@@ -3,7 +3,14 @@ from experimental_test_pipeline import ReviewExperiment
 # Lista di temi diversi per testare la robustezza
 topics = [
     "Fisica quantistica e informazione",
-    "Applicazioni della meccanica quantistica nei semiconduttori",
+    
+]
+
+
+# Avvia esperimento
+experiment = ReviewExperiment(topics)
+experiment.run()
+""""Applicazioni della meccanica quantistica nei semiconduttori",
     "Entanglement quantistico e comunicazione sicura",
     "Teletrasporto quantistico e reti quantistiche",
     "Decoerenza e transizione classico-quantistica",
@@ -31,10 +38,4 @@ topics = [
     "Fisica quantistica e termodinamica dell’informazione",
     "Quantum coherence nei sistemi biologici",
     "Effetti quantistici nei sistemi di spin",
-    "Fisica quantistica e filosofia della misura"
-]
-
-
-# Avvia esperimento
-experiment = ReviewExperiment(topics)
-experiment.run()
+    "Fisica quantistica e filosofia della misura" """

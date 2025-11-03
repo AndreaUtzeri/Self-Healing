@@ -6,10 +6,16 @@ class CitationMonitor:
         self.doi_pattern = r'https?://(?:dx\.)?doi\.org/([^\s\'")]+)' #r'\b(10\.\d{4,9}/[-._;()/:A-Za-z0-9]+)\b' regex più restrittiva
         self.compiled_pattern = re.compile(self.doi_pattern)
 
-    def extract_dois(self, text:str) -> List[str]:
-
+    def extract_dois(self, text: str) -> List[str]:
+        # Trova DOI nel formato URL (es. https://doi.org/10.1038/nphys1170)
         dois = self.compiled_pattern.findall(text)
-        unique_dois = list(dict.fromkeys(dois)) #trasformo in un dizionario per rimuovere i duplicati e ritrasformo in lista
+
+        
+        cleaned_dois = [doi.strip().strip(",.;()[]{}") for doi in dois]
+
+        
+        unique_dois = list(dict.fromkeys(cleaned_dois))
+
         return unique_dois
 
     def locate_dois(self, text:str ) -> List[Dict]:
