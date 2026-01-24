@@ -1,0 +1,47 @@
+{
+  "true_references": [
+    {
+      "id": "GT01",
+      "authors": ["Krizhevsky", "Sutskever", "Hinton"],
+      "year": 2017,
+      "doi": "10.1145/3065386",
+      "title": "ImageNet classification with deep convolutional neural networks",
+      "venue": "Communications of the ACM"
+    },
+    {
+      "id": "GT02",
+      "authors": ["Hochreiter", "Schmidhuber"],
+      "year": 1997,
+      "doi": "10.1162/neco.1997.9.8.1735",
+      "title": "Long Short-Term Memory",
+      "venue": "Neural Computation"
+    },
+    {
+      "id": "GT03",
+      "authors": ["Pan", "Yang"],
+      "year": 2010,
+      "doi": "10.1109/TKDE.2010.191",
+      "title": "A Survey on Transfer Learning",
+      "venue": "IEEE Transactions on Knowledge and Data Engineering"
+    },
+    {
+      "id": "GT04",
+      "authors": ["Almanjahie", "Kaid", "Laksaci", "Rachdi"],
+      "year": 2021,
+      "doi": "10.7717/peerj.11719",
+      "title": "Predicting temperature curve based on fast kNN local linear estimation of the conditional distribution function",
+      "venue": "PeerJ"
+    },
+    
+  {
+  "id": "GT06",
+  "authors": ["Bartlett"],
+  "year": 2014,
+  "doi": "10.5860/llm.v29i1.7116",
+  "title": "New and Noteworthy: Coming to Terms with Librarian Stereotypes and Self-Image",
+  "venue": "Library Leadership & Management"
+  }
+
+
+  ]
+}

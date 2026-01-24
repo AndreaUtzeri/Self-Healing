@@ -1,2 +1,0 @@
-topic,prompt_tokens_full,prompt_tokens_sent,total_tokens_full,total_tokens_sent,cost_full,cost_sent,latency_full,latency_sent,saving_pct_tokens,saving_pct_cost,total_time_pipeline
-Fisica quantistica e informazione,1272,253,2249,413,0.0007769999999999999,0.00013394999999999998,17.581064701080322,5.2042012214660645,81.63628279235215,99.986605,31.431339025497437
