@@ -11,7 +11,7 @@ class CitationVerifier:
 
 
     # =======================================================================
-    # 1. VERIFICA DOIs
+    # VERIFICA DOIs
     # =======================================================================
     def verify_doi(self, doi: str, timeout: int = 5) -> Tuple[bool, Optional[Dict]]:
         """
@@ -44,12 +44,10 @@ class CitationVerifier:
 
 
     # =======================================================================
-    # 2. SEARCH: AUTHOR + YEAR
+    # SEARCH: AUTHOR + YEAR
     # =======================================================================
     def search_by_author_year(self, author: str, year: int, timeout: int = 5) -> List[Dict]:
-        """
-        Best-effort search. Non è una verifica: restituisce possibili match.
-        """
+        
         params = {
             "query.author": author,
             "filter": f"from-pub-date:{year}-01-01,until-pub-date:{year}-12-31",
@@ -69,7 +67,7 @@ class CitationVerifier:
 
 
     # =======================================================================
-    # 3. SEARCH: TITLE (bibliographic search)
+    # SEARCH: TITLE (bibliographic search)
     # =======================================================================
     def search_by_title(self, title: str, timeout: int = 5) -> List[Dict]:
         """
@@ -111,9 +109,7 @@ class CitationVerifier:
         return result[:5]
 
     def _extract_metadata_from_item(self, item: Dict) -> Dict:
-        """
-        Trasforma un item Crossref in un metadata dict coerente.
-        """
+      
         return {
             "doi": item.get("DOI"),
             "title": item.get("title", ["Unknown"])[0],

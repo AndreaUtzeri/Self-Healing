@@ -12,7 +12,7 @@ class CitationBenchmarkTestRefs:
         self.references = TEST_REFERENCES
 
     def parse_reference(self, detected_form):
-        """Parsing semplice per test."""
+        
         doi, authors, year, title, venue = None, None, None, None, None
 
         if "DOI:" in detected_form:
@@ -40,7 +40,7 @@ class CitationBenchmarkTestRefs:
         }
 
     def run_single_test(self):
-        """Applica il plan su tutti i riferimenti e restituisce i risultati."""
+        
         plan_output = {}
         for idx, ref_data in enumerate(self.references):
             ref_id = f"ref_{idx+1}"

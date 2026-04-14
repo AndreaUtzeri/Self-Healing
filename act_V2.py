@@ -4,15 +4,15 @@ from typing import Dict, Any
 
 class CitationAct:
     """
-    Nuova versione dell'ACT: corregge, normalizza o rimuove citazioni
-    in base ai risultati del PLAN.
+    New version of ACT: corrects, normalizes, or removes citations
+    based on the PLAN results.
     """
 
     def __init__(self):
         pass
 
     # --------------------------------------------------------------
-    # 1. Ricostruzione citazione corretta basata su Crossref
+    # 1. Reconstruct correct citation based on Crossref
     # --------------------------------------------------------------
     def _format_correct_reference(self, metadata: Dict[str, Any], doi: str) -> str:
         authors = metadata.get("authors", [])
@@ -20,7 +20,7 @@ class CitationAct:
         title = metadata.get("title", "Unknown title")
         venue = metadata.get("venue", "Unknown venue")
 
-        # Autori stile APA ridotto: Primo autore et al.
+        # Authors in simplified APA style: first author et al.
         if len(authors) == 0:
             author_str = ""
         elif len(authors) == 1:
@@ -31,12 +31,12 @@ class CitationAct:
         return f"{author_str} ({year}). {title}. {venue}. https://doi.org/{doi}"
 
     # --------------------------------------------------------------
-    # 2. Applica trasformazioni al testo
+    # 2. Apply transformations to the text
     # --------------------------------------------------------------
     def apply(self, text: str, plan_output: Dict[str, Dict]) -> str:
         """
-        text: testo originale
-        plan_output: output del PLAN con status di verifica
+        text: original text
+        plan_output: output of the PLAN with verification status
         """
         adapted = text
 
@@ -46,11 +46,11 @@ class CitationAct:
             verification = ref_data["verification"]
             status = verification["status"]
 
-            # Escaping della stringa catturata nel testo
+            # Escape the detected string as it appears in the text
             pattern = re.escape(detected)
 
             # -----------------------------------------------
-            # Caso A: DOI verificato → correggi
+            # Case A: DOI verified → correct the citation
             # -----------------------------------------------
             if status == "verified":
                 doi = parsed["doi"]
@@ -60,14 +60,14 @@ class CitationAct:
                 continue
 
             # -----------------------------------------------
-            # Caso B: DOI NON valido → elimina completamente
+            # Case B: DOI NOT valid → remove completely
             # -----------------------------------------------
             if status == "invalid_doi":
                 adapted = re.sub(pattern, "[[OMIT_INVALID_DOI]]", adapted)
                 continue
 
             # -----------------------------------------------
-            # Caso C: cita­zione non verificabile
+            # Case C: citation not verifiable
             # -----------------------------------------------
             if status == "insufficient_metadata":
                 replacement = f"{detected} [UNVERIFIABLE]"

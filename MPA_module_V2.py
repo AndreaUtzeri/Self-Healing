@@ -11,9 +11,9 @@ from api_openai import OpenAIClient
 
 class SelfHealingLayerV2:
     """
-    Pipeline completa:
+    Complete pipeline:
     MONITOR → PLAN → ACT → REVIEW
-    Versione aggiornata che usa i nuovi moduli LLM-based.
+    Updated version using the new LLM-based modules.
     """
 
     def __init__(self, model: str = "gpt-4o-mini"):
@@ -29,22 +29,22 @@ class SelfHealingLayerV2:
         start_total = time.time()
 
         
-        # 1. MONITORING → Rilevamento citazioni
+        # 1. MONITORING → Citation detection
         
         monitor_output: List[Dict] = self.monitor.extract_references(text)
 
         
-        # 2. PLAN → Verifica Crossref
+        # 2. PLAN → Crossref verification
         
         plan_output: Dict[str, Dict] = self.plan.run(monitor_output)
 
         
-        # 3. ACT → Correggi / Rimuovi / Marca
+        # 3. ACT → Correct / Remove / Mark
        
         adapted_text = self.act.apply(text, plan_output)
 
         
-        # 4. REVIEW → Correggi solo le frasi con placeholder OMISSIONI
+        # 4. REVIEW → Correct only sentences with omission placeholders
         
         refined_sentence_text, review_stats = self.refiner.refine_text(adapted_text)
 
