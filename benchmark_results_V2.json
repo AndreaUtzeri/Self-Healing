@@ -1,0 +1,338 @@
+{
+  "optimistic": {
+    "aggregated": {
+      "metrics_aggregated": {
+        "accuracy": {
+          "mean": 0.7178,
+          "stdev": 0.1246,
+          "min": 0.5556,
+          "max": 0.8889
+        },
+        "precision": {
+          "mean": 0.53,
+          "stdev": 0.3768,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "recall": {
+          "mean": 0.5643,
+          "stdev": 0.3698,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "f1": {
+          "mean": 0.5097,
+          "stdev": 0.3036,
+          "min": 0.0,
+          "max": 0.75
+        }
+      },
+      "confusion_matrix_mean": {
+        "TP": 2.2,
+        "FN": 1.2,
+        "TN": 4.4,
+        "FP": 1.4,
+        "UNVERIFIABLE": 0.8
+      },
+      "partial_analysis_aggregated": {
+        "partial_as_verified_mean": 0,
+        "partial_as_verified_total": 0,
+        "note": "Deve essere 0 in ogni run. Valori > 0 indicano FP silenziosi critici."
+      },
+      "label_counts_aggregated": {
+        "true": {
+          "mean": 3.4,
+          "stdev": 2.6
+        },
+        "corrupt": {
+          "mean": 5.8,
+          "stdev": 2.3
+        },
+        "partial": {
+          "mean": 0.8,
+          "stdev": 0.4
+        },
+        "total_per_run": 10
+      }
+    },
+    "per_run_metrics": [
+      {
+        "decidable_references": 10,
+        "accuracy": 0.7,
+        "precision": 1.0,
+        "recall": 0.5714,
+        "f1": 0.7273
+      },
+      {
+        "decidable_references": 9,
+        "accuracy": 0.7778,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75
+      },
+      {
+        "decidable_references": 9,
+        "accuracy": 0.5556,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      {
+        "decidable_references": 9,
+        "accuracy": 0.6667,
+        "precision": 0.4,
+        "recall": 1.0,
+        "f1": 0.5714
+      },
+      {
+        "decidable_references": 9,
+        "accuracy": 0.8889,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    ],
+    "per_run_partial": [
+      {
+        "partial_total": 0,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      },
+      {
+        "partial_total": 1,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      },
+      {
+        "partial_total": 1,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      },
+      {
+        "partial_total": 1,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      },
+      {
+        "partial_total": 1,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      }
+    ],
+    "per_run_label_counts": [
+      {
+        "total": 10,
+        "true": 7,
+        "corrupt": 3,
+        "partial": 0,
+        "true_pct": 70.0,
+        "corrupt_pct": 30.0,
+        "partial_pct": 0.0
+      },
+      {
+        "total": 10,
+        "true": 4,
+        "corrupt": 5,
+        "partial": 1,
+        "true_pct": 40.0,
+        "corrupt_pct": 50.0,
+        "partial_pct": 10.0
+      },
+      {
+        "total": 10,
+        "true": 4,
+        "corrupt": 5,
+        "partial": 1,
+        "true_pct": 40.0,
+        "corrupt_pct": 50.0,
+        "partial_pct": 10.0
+      },
+      {
+        "total": 10,
+        "true": 2,
+        "corrupt": 7,
+        "partial": 1,
+        "true_pct": 20.0,
+        "corrupt_pct": 70.0,
+        "partial_pct": 10.0
+      },
+      {
+        "total": 10,
+        "true": 0,
+        "corrupt": 9,
+        "partial": 1,
+        "true_pct": 0.0,
+        "corrupt_pct": 90.0,
+        "partial_pct": 10.0
+      }
+    ]
+  },
+  "degraded": {
+    "aggregated": {
+      "metrics_aggregated": {
+        "accuracy": {
+          "mean": 0.6467,
+          "stdev": 0.3217,
+          "min": 0.125,
+          "max": 0.9
+        },
+        "precision": {
+          "mean": 0.35,
+          "stdev": 0.4873,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "recall": {
+          "mean": 0.35,
+          "stdev": 0.4873,
+          "min": 0.0,
+          "max": 1.0
+        },
+        "f1": {
+          "mean": 0.3428,
+          "stdev": 0.4695,
+          "min": 0.0,
+          "max": 0.8571
+        }
+      },
+      "confusion_matrix_mean": {
+        "TP": 1.2,
+        "FN": 1.2,
+        "TN": 4.6,
+        "FP": 1.8,
+        "UNVERIFIABLE": 1.2
+      },
+      "partial_analysis_aggregated": {
+        "partial_as_verified_mean": 0,
+        "partial_as_verified_total": 0,
+        "note": "Deve essere 0 in ogni run. Valori > 0 indicano FP silenziosi critici."
+      },
+      "label_counts_aggregated": {
+        "true": {
+          "mean": 2.4,
+          "stdev": 1.3
+        },
+        "corrupt": {
+          "mean": 6.4,
+          "stdev": 1.5
+        },
+        "partial": {
+          "mean": 1.2,
+          "stdev": 0.8
+        },
+        "total_per_run": 10
+      }
+    },
+    "per_run_metrics": [
+      {
+        "decidable_references": 10,
+        "accuracy": 0.9,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571
+      },
+      {
+        "decidable_references": 8,
+        "accuracy": 0.875,
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571
+      },
+      {
+        "decidable_references": 8,
+        "accuracy": 0.125,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "decidable_references": 9,
+        "accuracy": 0.5556,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      {
+        "decidable_references": 9,
+        "accuracy": 0.7778,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    ],
+    "per_run_partial": [
+      {
+        "partial_total": 0,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      },
+      {
+        "partial_total": 2,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      },
+      {
+        "partial_total": 2,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      },
+      {
+        "partial_total": 1,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      },
+      {
+        "partial_total": 1,
+        "partial_as_verified": 0,
+        "partial_fp_rate": 0.0
+      }
+    ],
+    "per_run_label_counts": [
+      {
+        "total": 10,
+        "true": 4,
+        "corrupt": 6,
+        "partial": 0,
+        "true_pct": 40.0,
+        "corrupt_pct": 60.0,
+        "partial_pct": 0.0
+      },
+      {
+        "total": 10,
+        "true": 3,
+        "corrupt": 5,
+        "partial": 2,
+        "true_pct": 30.0,
+        "corrupt_pct": 50.0,
+        "partial_pct": 20.0
+      },
+      {
+        "total": 10,
+        "true": 3,
+        "corrupt": 5,
+        "partial": 2,
+        "true_pct": 30.0,
+        "corrupt_pct": 50.0,
+        "partial_pct": 20.0
+      },
+      {
+        "total": 10,
+        "true": 1,
+        "corrupt": 8,
+        "partial": 1,
+        "true_pct": 10.0,
+        "corrupt_pct": 80.0,
+        "partial_pct": 10.0
+      },
+      {
+        "total": 10,
+        "true": 1,
+        "corrupt": 8,
+        "partial": 1,
+        "true_pct": 10.0,
+        "corrupt_pct": 80.0,
+        "partial_pct": 10.0
+      }
+    ]
+  }
+}

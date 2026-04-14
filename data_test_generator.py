@@ -262,7 +262,7 @@ CORRUPTION_TYPES = [
 TEST_REFERENCES = []
 counts = {"true": 0, "corrupt": 0, "partial": 0}
 
-for i in range(50):
+for i in range(300):
     ref = random.choice(GROUND_TRUTH)
     corruption_type = random.choices(
         CORRUPTION_TYPES,
